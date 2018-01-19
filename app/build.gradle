@@ -1,0 +1,131 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '26.0.2'
+
+
+    defaultConfig {
+        applicationId "com.ice.retrofitrxjavademo"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+        }
+
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+        }
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
+
+        def VERSION = "$rootProject.ext.supportLibraryVersion"
+
+        dependencies {
+            compile fileTree(include: ['*.jar'], dir: 'libs')
+            testCompile 'junit:junit:4.12'
+            compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+            compile 'com.android.support:appcompat-v7:' + VERSION
+            compile 'com.android.support:design:' + VERSION
+            compile 'com.android.support:recyclerview-v7:' + VERSION
+
+            //noinspection GradleCompatible
+            compile 'com.android.support.test:runner:1.0.1'
+            compile 'com.android.support.test.espresso:espresso-core:3.0.1'
+            compile 'io.reactivex:rxjava:1.1.5'
+            compile 'io.reactivex:rxandroid:1.2.0'
+            compile 'com.squareup.retrofit2:retrofit:2.3.0'
+            compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+            compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+            compile 'com.android.support:multidex:1.0.1'
+            //    compile 'com.zhy:okhttputils:2.6.2'
+            compile 'com.jakewharton:butterknife:8.8.1'
+            annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+            // 智能刷新控件
+            compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+
+            //强大的工具类 几乎涵盖了常用的所有工具类
+            compile 'com.blankj:utilcode:1.11.0'
+            // 权限管理
+            compile 'com.yanzhenjie:permission:1.0.5'
+
+            //    SystemBar一体化，状态栏和导航栏均支持设置颜色、渐变色、图片、透明度、内容入侵。
+
+            // 状态栏支持设置深色字体，以上特性兼容国产魅族、小米手机（包括7.0及以上）和其它标准模式的手机。
+
+            // https://github.com/yanzhenjie/Sofia
+
+            //    compile 'com.yanzhenjie:sofia:1.0.4'
+            compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+
+            //    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+            //流式布局
+
+            //    compile 'com.zhy:flowlayout-lib:1.0.3'
+
+            //事件总线eventbus
+
+            //    compile 'org.greenrobot:eventbus:3.0.0'
+
+            // 仿ios 滚轮选择器
+
+            //    compile 'com.weigan:loopView:0.1.2'
+
+            //可嵌套的RadioGroup
+
+            //    compile 'com.github.fodroid:XRadioGroup:v1.1'
+
+            //圆形头像
+
+            //    compile 'de.hdodenhof:circleimageview:2.1.0'
+
+            //    compile "com.android.support:multidex:1.0.1"
+
+            // 滑动关闭activity
+
+            //    compile 'com.jude:swipebackhelper:3.1.2'
+
+            //    compile 'com.google.zxing:core:3.3.1'
+            compile project(path: ':ZXing')
+            implementation files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
+
+
+            // 替换成最新版本, 需要注意的是api
+            // 要与compiler匹配使用，均使用最新版可以保证兼容
+            compile 'com.alibaba:arouter-api:1.3.0'
+            annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+
+            implementation 'wellijohn.org.animtv:animtv:1.0.1'
+
+            compile 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
+        }
+    }
+
+}
+
