@@ -12,8 +12,27 @@
         android:text="截屏"
         android:textSize="16sp"/>
 
-    <ImageView
-        android:id="@+id/iv"
-        android:layout_width="200dp"
-        android:layout_height="300dp"/>
+    <LinearLayout
+        android:id="@+id/ll_tag_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/splash"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="打开手机 扫一扫"/>
+
+    </LinearLayout>
+
 </LinearLayout>

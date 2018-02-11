@@ -101,6 +101,21 @@ public class IceScreamMainActivity extends BaseActivity {
                     case 9://pdf
                         ARouter.getInstance().build("/ice/activity/PdfActivity").navigation();
                         break;
+                    case 10://downLoad
+                        ARouter.getInstance().build("/ice/activity/DownLoadActivity").navigation();
+                        break;
+                    case 11://指定布局截屏
+                        ARouter.getInstance().build("/ice/activity/ScreenCutActivity").navigation();
+                        break;
+                    case 12://图片选择器
+                        ARouter.getInstance().build("/ice/activity/PictureSelectActivity").navigation();
+                        break;
+                    case 13://视频选择器
+                        ARouter.getInstance().build("/ice/activity/VideoSelectActivity").navigation();
+                        break;
+                    case 14://节操播放器
+                        ARouter.getInstance().build("/ice/activity/JieCaoPlayerActivity").navigation();
+                        break;
                 }
             }
         });
@@ -118,6 +133,12 @@ public class IceScreamMainActivity extends BaseActivity {
         mShowItems.add(new JoJoBean(7, "ViewPager"));
         mShowItems.add(new JoJoBean(8, "ScrollText"));
         mShowItems.add(new JoJoBean(9, "pdf"));
+        mShowItems.add(new JoJoBean(10, "downLoad"));
+        mShowItems.add(new JoJoBean(11, "局部截屏"));
+        mShowItems.add(new JoJoBean(12, "图片选择器"));
+        mShowItems.add(new JoJoBean(13, "视频选择器"));
+        mShowItems.add(new JoJoBean(14, "节操播放器"));
+
         mJoJoAdapter.notifyDataSetChanged();
     }
 

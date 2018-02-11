@@ -19,4 +19,5 @@
     <!-- QRCode scanner color end -->
 
     <color name="font_5353">#535353</color>
+    <color name="color_f6">#f6f6f6</color>
 </resources>

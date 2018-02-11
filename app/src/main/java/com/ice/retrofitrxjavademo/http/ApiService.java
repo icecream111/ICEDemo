@@ -83,7 +83,7 @@ public interface ApiService {
      */
     @Streaming
     @GET
-    Observable<ResponseBody> downloadFile(@Url String url);
+    Observable<ResponseBody> download(@Url String url);
 
 }
 

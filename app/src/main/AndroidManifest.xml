@@ -57,7 +57,14 @@
         <activity android:name=".activity.ScrollTextActivity"/>
         <!--pdf-->
         <activity android:name=".activity.PdfActivity"/>
-
+        <!--指定布局截屏-->
+        <activity android:name=".activity.ScreenCutActivity"/>
+        <!--图片选择-->
+        <activity android:name=".activity.PictureSelectActivity"/>
+        <!--视频选择-->
+        <activity android:name=".activity.VideoSelectActivity"/>
+        <!--节操-->
+        <activity android:name=".activity.JieCaoPlayerActivity"/>
 
         <!-- 设备管理 -->
         <receiver
