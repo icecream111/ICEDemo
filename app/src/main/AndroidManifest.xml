@@ -65,6 +65,12 @@
         <activity android:name=".activity.VideoSelectActivity"/>
         <!--节操-->
         <activity android:name=".activity.JieCaoPlayerActivity"/>
+        <!--跑马灯-->
+        <activity android:name=".activity.MarqueeViewActivity"/>
+        <!--底部tab-->
+        <activity android:name=".activity.BottomTabActivity"/>
+        <!--顶部红点消息提醒-->
+        <activity android:name=".activity.RedPointTabActivity"/>
 
         <!-- 设备管理 -->
         <receiver

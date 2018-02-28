@@ -116,6 +116,15 @@ public class IceScreamMainActivity extends BaseActivity {
                     case 14://节操播放器
                         ARouter.getInstance().build("/ice/activity/JieCaoPlayerActivity").navigation();
                         break;
+                    case 15://垂直跑马灯
+                        ARouter.getInstance().build("/ice/activity/MarqueeViewActivity").navigation();
+                        break;
+                    case 16://底部tab
+                        ARouter.getInstance().build("/ice/activity/BottomTabActivity").navigation();
+                        break;
+                    case 17://tab小红点
+                        ARouter.getInstance().build("/ice/activity/RedPointTabActivity").navigation();
+                        break;
                 }
             }
         });
@@ -138,6 +147,9 @@ public class IceScreamMainActivity extends BaseActivity {
         mShowItems.add(new JoJoBean(12, "图片选择器"));
         mShowItems.add(new JoJoBean(13, "视频选择器"));
         mShowItems.add(new JoJoBean(14, "节操播放器"));
+        mShowItems.add(new JoJoBean(15, "垂直跑马灯"));
+        mShowItems.add(new JoJoBean(16, "底部tab"));
+        mShowItems.add(new JoJoBean(17, "tab小红点"));
 
         mJoJoAdapter.notifyDataSetChanged();
     }
