@@ -134,6 +134,8 @@ android {
             compile 'cn.jzvd:jiaozivideoplayer:6.2.7'
             //底部tab
             compile 'com.ashokvarma.android:bottom-navigation-bar:1.4.1'
+            //倒计时
+            compile 'com.github.iwgang:countdownview:2.1.6'
         }
     }
 

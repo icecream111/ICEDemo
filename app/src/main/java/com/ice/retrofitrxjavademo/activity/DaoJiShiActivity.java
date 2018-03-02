@@ -7,10 +7,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.blankj.utilcode.util.ToastUtils;
 import com.ice.retrofitrxjavademo.R;
 import com.ice.retrofitrxjavademo.base.BaseActivity;
 
 import butterknife.BindView;
+import cn.iwgang.countdownview.CountdownView;
+import cn.iwgang.countdownview.DynamicConfig;
 
 /**
  * Created by ICE on 2018/3/1.
@@ -25,8 +28,8 @@ public class DaoJiShiActivity extends BaseActivity {
     TextView mTvSecond;
     @BindView(R.id.ll_xsqg)
     LinearLayout mLlXsqg;
-    private long mHour = 02;
-    private long mMin = 15;
+    private long mHour = 0;
+    private long mMin = 1;
     private long mSecond = 36;
     private boolean isRun = true;
 
@@ -54,7 +57,6 @@ public class DaoJiShiActivity extends BaseActivity {
             }
         }
     };
-
 
     /**
      * 开启倒计时
@@ -102,7 +104,23 @@ public class DaoJiShiActivity extends BaseActivity {
 
     @Override
     protected void initializeView() {
+        CountdownView timer = (CountdownView) findViewById(R.id.timer);
+        long time = (long) 1 * 10 * 1000;
 
+        DynamicConfig dynamicConfig = new DynamicConfig.Builder()
+                .setShowDay(true).setSuffixDay("天")
+                .setShowHour(true).setSuffixHour("小时")
+                .setShowMinute(true).setSuffixMinute("分")
+                .setShowSecond(true).setSuffixSecond("秒")
+                .build();
+        timer.dynamicShow(dynamicConfig);
+        timer.start(time);
+        timer.setOnCountdownEndListener(new CountdownView.OnCountdownEndListener() {
+            @Override
+            public void onEnd(CountdownView cv) {
+                ToastUtils.showShort("倒计时。。。");
+            }
+        });
     }
 
     @Override
