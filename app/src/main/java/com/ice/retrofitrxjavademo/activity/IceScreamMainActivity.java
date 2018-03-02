@@ -125,6 +125,9 @@ public class IceScreamMainActivity extends BaseActivity {
                     case 17://tab小红点
                         ARouter.getInstance().build("/ice/activity/RedPointTabActivity").navigation();
                         break;
+                    case 18://限时秒杀倒计时
+                        ARouter.getInstance().build("/ice/activity/DaoJiShiActivity").navigation();
+                        break;
                 }
             }
         });
@@ -150,6 +153,7 @@ public class IceScreamMainActivity extends BaseActivity {
         mShowItems.add(new JoJoBean(15, "垂直跑马灯"));
         mShowItems.add(new JoJoBean(16, "底部tab"));
         mShowItems.add(new JoJoBean(17, "tab小红点"));
+        mShowItems.add(new JoJoBean(18, "限时秒杀倒计时"));
 
         mJoJoAdapter.notifyDataSetChanged();
     }

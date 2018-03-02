@@ -132,4 +132,5 @@ public class RedPointTabActivity extends BaseActivity {
             }
         }
     }
+
 }

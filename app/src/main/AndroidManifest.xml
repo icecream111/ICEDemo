@@ -71,7 +71,8 @@
         <activity android:name=".activity.BottomTabActivity"/>
         <!--顶部红点消息提醒-->
         <activity android:name=".activity.RedPointTabActivity"/>
-
+        <!--限时秒杀-->
+        <activity android:name=".activity.DaoJiShiActivity"/>
         <!-- 设备管理 -->
         <receiver
             android:name=".broadcastreceiver.LockReceiver"
