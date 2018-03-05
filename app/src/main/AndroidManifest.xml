@@ -73,6 +73,8 @@
         <activity android:name=".activity.RedPointTabActivity"/>
         <!--限时秒杀-->
         <activity android:name=".activity.DaoJiShiActivity"/>
+        <!--顶部 底部导航-->
+        <activity android:name=".activity.TabActivity"/>
         <!-- 设备管理 -->
         <receiver
             android:name=".broadcastreceiver.LockReceiver"

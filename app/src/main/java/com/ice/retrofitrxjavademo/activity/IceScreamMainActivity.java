@@ -128,6 +128,9 @@ public class IceScreamMainActivity extends BaseActivity {
                     case 18://限时秒杀倒计时
                         ARouter.getInstance().build("/ice/activity/DaoJiShiActivity").navigation();
                         break;
+                    case 19://导航栏
+                        ARouter.getInstance().build("/ice/activity/TabActivity").navigation();
+                        break;
                 }
             }
         });
@@ -154,6 +157,7 @@ public class IceScreamMainActivity extends BaseActivity {
         mShowItems.add(new JoJoBean(16, "底部tab"));
         mShowItems.add(new JoJoBean(17, "tab小红点"));
         mShowItems.add(new JoJoBean(18, "限时秒杀倒计时"));
+        mShowItems.add(new JoJoBean(19, "Tab导航栏"));
 
         mJoJoAdapter.notifyDataSetChanged();
     }
@@ -163,6 +167,7 @@ public class IceScreamMainActivity extends BaseActivity {
      * 获取相应权限去扫码界面
      */
     private void getPermission() {
+        //        RxPermissions rxPermissions = new RxPermissions(this);
         if (AndPermission.hasPermission(this, Manifest.permission.CAMERA)) {
             // 有权限，直接do anything.
             startActivityForResult(new Intent(this, CaptureActivity.class), 200);
