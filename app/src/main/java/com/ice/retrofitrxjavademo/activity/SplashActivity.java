@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.ice.retrofitrxjavademo.R;
 import com.ice.retrofitrxjavademo.base.BaseActivity;
 import com.ice.retrofitrxjavademo.callback.OnFinishListener;
@@ -84,12 +83,12 @@ public class SplashActivity extends BaseActivity {
             //           .build("/ice/activity/ChenBingMainActivity")
             //           .navigation();
             // 2. 跳转并携带参数
-            ARouter.getInstance().build("/ice/activity/ChenBingMainActivity")
-                    .withString("name", "888")
-                    .withLong("age", 666L)
-                    //   .withObject("key4", new Test("Jack", "Rose"))
-                    .navigation();
-            finish();
+            //            ARouter.getInstance().build("/ice/activity/ChenBingMainActivity")
+            //                    .withString("name", "888")
+            //                    .withLong("age", 666L)
+            //                    //   .withObject("key4", new Test("Jack", "Rose"))
+            //                    .navigation();
+            initJump();
         } else {
             // 申请权限。
             AndPermission.with(this)
@@ -108,15 +107,13 @@ public class SplashActivity extends BaseActivity {
     //获取权限成功的回调
     @PermissionYes(READ_STATE)
     private void getCameraYes(List<String> grantedPermissions) {
-        startActivity(new Intent(SplashActivity.this, IceScreamMainActivity.class));
-        finish();
+        initJump();
     }
 
     //获取权限失败的回调
     @PermissionNo(READ_STATE)
     private void getCameraNo(List<String> grantedPermissions) {
-        startActivity(new Intent(SplashActivity.this, IceScreamMainActivity.class));
-        finish();
+        initJump();
     }
 
     /**
