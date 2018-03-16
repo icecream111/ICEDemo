@@ -134,6 +134,9 @@ public class IceScreamMainActivity extends BaseActivity {
                     case 20://问卷调查
                         ARouter.getInstance().build("/ice/activity/ViewPagerListActivity").navigation();
                         break;
+                    case 21://手势 指纹密码
+                        ARouter.getInstance().build("/ice/activity/SecurityActivity").navigation();
+                        break;
                 }
             }
         });
@@ -162,6 +165,7 @@ public class IceScreamMainActivity extends BaseActivity {
         mShowItems.add(new JoJoBean(18, "限时秒杀倒计时"));
         mShowItems.add(new JoJoBean(19, "Tab导航栏"));
         mShowItems.add(new JoJoBean(20, "问卷调查"));
+        mShowItems.add(new JoJoBean(21, "手势指纹密码"));
 
         mJoJoAdapter.notifyDataSetChanged();
     }

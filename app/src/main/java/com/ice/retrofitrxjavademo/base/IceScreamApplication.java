@@ -37,7 +37,6 @@ public class IceScreamApplication extends MultiDexApplication {
          */
         if (ISDEBUG) {
             ARouter.openLog();
-            ARouter.openLog();
         }
         ARouter.init(getInstance);
     }
