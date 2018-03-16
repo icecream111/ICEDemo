@@ -108,7 +108,7 @@ public class PdfActivity extends BaseActivity implements OnPageChangeListener, O
                         try {
                             is = response.body().byteStream();
                             long total = response.body().contentLength();
-                            File file = new File(path,  url.substring(url.lastIndexOf("/") + 1));
+                            File file = new File(path, url.substring(url.lastIndexOf("/") + 1));
                             fos = new FileOutputStream(file);
                             long sum = 0;
                             while ((len = is.read(buf)) != -1) {
@@ -149,6 +149,11 @@ public class PdfActivity extends BaseActivity implements OnPageChangeListener, O
     protected void initializeData() {
     }
 
+    /**
+     * pdf文件展示
+     *
+     * @param file
+     */
     private void displayFromFile(File file) {
         mPdfview.fromFile(file)   //设置pdf文件地址
                 .defaultPage(1)         //设置默认显示第1页
