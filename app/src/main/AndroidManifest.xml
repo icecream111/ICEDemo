@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <!--主页-->
-        <activity android:name=".activity.IceScreamMainActivity"/>
+        <activity android:name=".activity.MainActivity"/>
         <!--二维码扫描-->
         <activity
             android:name="com.xys.libzxing.zxing.activity.CaptureActivity"

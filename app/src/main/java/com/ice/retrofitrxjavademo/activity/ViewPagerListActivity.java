@@ -41,11 +41,12 @@ public class ViewPagerListActivity extends BaseActivity {
         setContentView(R.layout.activity_pager_list);
     }
 
+
     @Override
     protected void initializeView() {
         mTvPrevious.setVisibility(View.INVISIBLE);
         for (int i = 0; i < 10; i++) {
-            PagerFragment pagerFragment = new PagerFragment();
+            PagerFragment pagerFragment = PagerFragment.newInstance( i);
             fragments.add(pagerFragment);
             PagerListBean pagerListBean = new PagerListBean("问卷调查第" + i + "题");
             mShowItems.add(pagerListBean);

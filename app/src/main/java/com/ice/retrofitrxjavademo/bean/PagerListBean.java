@@ -8,6 +8,16 @@ package com.ice.retrofitrxjavademo.bean;
 public class PagerListBean {
     private String title;
 
+    public ContentBean getContentBean() {
+        return mContentBean;
+    }
+
+    public void setContentBean(ContentBean contentBean) {
+        mContentBean = contentBean;
+    }
+
+    private ContentBean mContentBean;
+
     public PagerListBean(String title) {
         this.title = title;
     }
@@ -18,6 +28,10 @@ public class PagerListBean {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public static class ContentBean {
+        private String a;
     }
 
     @Override

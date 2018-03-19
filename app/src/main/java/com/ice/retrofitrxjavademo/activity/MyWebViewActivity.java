@@ -209,7 +209,7 @@ public class MyWebViewActivity extends BaseActivity {
     @OnClick(R.id.iv_back)
     public void onViewClicked() {
         if (start == 0) {
-            startActivity(new Intent(MyWebViewActivity.this, IceScreamMainActivity.class));
+            startActivity(new Intent(MyWebViewActivity.this, MainActivity.class));
             finish();
         } else {
             finish();
@@ -221,7 +221,7 @@ public class MyWebViewActivity extends BaseActivity {
         // 按下键盘上返回按钮
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if (start == 0) {
-                startActivity(new Intent(MyWebViewActivity.this, IceScreamMainActivity.class));
+                startActivity(new Intent(MyWebViewActivity.this, MainActivity.class));
                 finish();
             } else {
                 finish();

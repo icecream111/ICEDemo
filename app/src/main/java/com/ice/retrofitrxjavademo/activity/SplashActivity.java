@@ -123,11 +123,12 @@ public class SplashActivity extends BaseActivity {
         //指纹高优先级
         if (PreferenceCache.getFingerFlg()) {
             //指纹已开启
-            Intent intent = new Intent(SplashActivity.this, VerifyFingerActivity.class);
+            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
             return;
         }
+
         if (PreferenceCache.getGestureFlag()) {
             Intent intent = new Intent(getApplicationContext(), ClosePatternPswActivity.class);
             //等于3为认证成功
@@ -136,7 +137,7 @@ public class SplashActivity extends BaseActivity {
             finish();
             return;
         }
-        startActivity(new Intent(getApplicationContext(), IceScreamMainActivity.class));
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
         finish();
     }
 }
