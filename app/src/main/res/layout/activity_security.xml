@@ -37,73 +37,79 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:background="@color/white"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/handpsw"/>
+        <!--开启手势密码-->
+        <LinearLayout
+            android:id="@+id/ll_fingure_psd"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            <TextView
+                android:id="@+id/tv_handle_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="开启手势密码"
+                android:textColor="#2D3144"
+                android:textSize="15sp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/iv_hand_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/auto_bidding_off"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_change_psd"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
             android:layout_marginLeft="20dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="手势密码"
-            android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:visibility="gone"/>
 
-        <ImageView
-            android:id="@+id/iv_hand_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginRight="10dp"
-            android:src="@mipmap/auto_bidding_on"/>
-    </LinearLayout>
+        <!--修改手势密码-->
+        <LinearLayout
+            android:id="@+id/ll_change_fingure_psd"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:visibility="gone">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="修改手势密码"
+                android:textColor="#2D3144"
+                android:textSize="15sp"/>
 
-    <LinearLayout
-        android:id="@+id/ll_setting_hand"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:visibility="visible">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/handsetting"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="15dp"/>
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="修改手势密码"
-            android:textColor="@color/black"
-            android:textSize="16sp"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginRight="20dp"
-            android:src="@mipmap/getmore"/>
     </LinearLayout>
 
     <View

@@ -5,4 +5,12 @@
     <string name="code_text">请输入生成二维码的文本信息</string>
     <string name="qrcodetext">这里显示扫描结果</string>
 
+    <string name="create_gesture_activity">CreateGestureActivity</string>
+    <string name="create_gesture_default">为了您的账户安全，请设置手势密码</string>
+    <string name="create_gesture_correct">请再次绘制</string>
+    <string name="create_gesture_less_error">最少连接4个点，请重新绘制</string>
+    <string name="create_gesture_confirm_error">密码与首次绘制的密码不同</string>
+    <string name="create_gesture_confirm_correct">手势密码绘制成功</string>
+    <string name="create_gesture_reset">重新设置</string>
+
 </resources>

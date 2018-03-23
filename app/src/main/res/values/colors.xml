@@ -25,4 +25,10 @@
     <color name="font_black">#333333</color>
     <color name="bak_blue">#3691ff</color>
     <color name="gray">#6666</color>
+    <color name="grey_f6f6f6">#f6f6f6</color>
+    <color name="grey_2c3036">#2c3036</color>
+    <color name="red_f75d5a">#f75d5a</color>
+    <color name="red_ef1917">#ef1917</color>
+    <color name="green_22AC38">#22AC38</color>
+    <color name="grey_b2b2b2">#b2b2b2</color>
 </resources>

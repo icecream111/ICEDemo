@@ -85,6 +85,8 @@
         <activity android:name=".activity.VerifyFingerActivity"/>
         <!--仿ios switchbutton-->
         <activity android:name=".activity.SwitchButtonActivity"/>
+        <activity android:name=".activity.CreateGestureActivity"/>
+        <activity android:name=".activity.GestureLoginActivity"/>
         <!-- 设备管理 -->
         <receiver
             android:name=".broadcastreceiver.LockReceiver"

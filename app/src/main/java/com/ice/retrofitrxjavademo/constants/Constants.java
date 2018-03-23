@@ -7,4 +7,5 @@ package com.ice.retrofitrxjavademo.constants;
 
 public interface Constants {
     String BASE_URL = "http://www.xinjiyuancps.com/test/";
+    String GESTURE_PASSWORD = "gesture_password";
 }
