@@ -9,7 +9,6 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.ice.retrofitrxjavademo.R;
 import com.ice.retrofitrxjavademo.base.BaseActivity;
 import com.ice.retrofitrxjavademo.callback.OnFinishListener;
-import com.ice.retrofitrxjavademo.utils.PreferenceCache;
 import com.ice.retrofitrxjavademo.view.ProgressView;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.PermissionNo;
@@ -121,22 +120,22 @@ public class SplashActivity extends BaseActivity {
      */
     private void initJump() {
         //指纹高优先级
-        if (PreferenceCache.getFingerFlg()) {
-            //指纹已开启
-            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-            return;
-        }
-
-        if (PreferenceCache.getGestureFlag()) {
-            Intent intent = new Intent(getApplicationContext(), ClosePatternPswActivity.class);
-            //等于3为认证成功
-            intent.putExtra("gestureFlg", 3);
-            startActivity(intent);
-            finish();
-            return;
-        }
+        //        if (PreferenceCache.getFingerFlg()) {
+        //            //指纹已开启
+        //            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        //            startActivity(intent);
+        //            finish();
+        //            return;
+        //        }
+        //
+        //        if (PreferenceCache.getGestureFlag()) {
+        //            Intent intent = new Intent(getApplicationContext(), ClosePatternPswActivity.class);
+        //            //等于3为认证成功
+        //            intent.putExtra("gestureFlg", 3);
+        //            startActivity(intent);
+        //            finish();
+        //            return;
+        //        }
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
         finish();
     }

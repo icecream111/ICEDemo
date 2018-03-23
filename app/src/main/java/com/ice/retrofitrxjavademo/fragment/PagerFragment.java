@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 import com.ice.retrofitrxjavademo.R;
 import com.ice.retrofitrxjavademo.activity.ViewPagerListActivity;
@@ -23,6 +24,8 @@ public class PagerFragment extends BaseFragment {
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
+    @BindView(R.id.tv_title)
+    TextView mTvTitle;
     private FragmentActivity mActivity;
 
     @Override
@@ -30,6 +33,12 @@ public class PagerFragment extends BaseFragment {
         return R.layout.fragment_pagerlist;
     }
 
+    /**
+     * 入口
+     *
+     * @param pos
+     * @return
+     */
     public static PagerFragment newInstance(int pos) {
         PagerFragment myFragment = new PagerFragment();
         Bundle bundle = new Bundle();
@@ -41,9 +50,17 @@ public class PagerFragment extends BaseFragment {
     @Override
     protected void initializeView(View view) {
         mActivity = getActivity();
+        Bundle bundle = getArguments();
+        int pos = bundle.getInt("pos");
+        PagerListBean bean = ((ViewPagerListActivity) getActivity()).mShowItems.get(pos);
+
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
-        PagerFragmentAdapter fragmentAdapter = new PagerFragmentAdapter(mActivity, ((ViewPagerListActivity) getActivity()).mShowItems);
+        PagerFragmentAdapter fragmentAdapter = new PagerFragmentAdapter(mActivity, ((ViewPagerListActivity) getActivity()).mShowItems, pos);
         fragmentAdapter.notifyDataSetChanged();
+        /**
+         * 问题的title
+         */
+        mTvTitle.setText("");
     }
 
     @Override
@@ -53,9 +70,6 @@ public class PagerFragment extends BaseFragment {
 
     @Override
     protected void initializeData() {
-        Bundle bundle = getArguments();
-        int pos = bundle.getInt("pos");
-        PagerListBean pagerListBean = ((ViewPagerListActivity) getActivity()).mShowItems.get(pos);
 
     }
 

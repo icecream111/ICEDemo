@@ -3,12 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ICEDemo.iml" filepath="$PROJECT_DIR$/ICEDemo.iml" />
-      <module fileurl="file://C:\AndroidProject\ICEDemo\ICEDemo.iml" filepath="C:\AndroidProject\ICEDemo\ICEDemo.iml" />
       <module fileurl="file://C:\AndroidProject\ICEDemo\RetrofitRxjavaDemo.iml" filepath="C:\AndroidProject\ICEDemo\RetrofitRxjavaDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/ZXing/ZXing.iml" filepath="$PROJECT_DIR$/ZXing/ZXing.iml" />
-      <module fileurl="file://C:\AndroidProject\ICEDemo\ZXing\ZXing.iml" filepath="C:\AndroidProject\ICEDemo\ZXing\ZXing.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\AndroidProject\ICEDemo\app\app.iml" filepath="C:\AndroidProject\ICEDemo\app\app.iml" />
     </modules>
   </component>
 </project>

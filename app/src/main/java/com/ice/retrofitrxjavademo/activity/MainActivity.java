@@ -137,6 +137,9 @@ public class MainActivity extends BaseActivity {
                     case 21://手势 指纹密码
                         ARouter.getInstance().build("/ice/activity/SecurityActivity").navigation();
                         break;
+                    case 22://switchButton
+                        ARouter.getInstance().build("/ice/activity/SwitchButtonActivity").navigation();
+                        break;
                 }
             }
         });
@@ -166,6 +169,7 @@ public class MainActivity extends BaseActivity {
         mShowItems.add(new JoJoBean(19, "Tab导航栏"));
         mShowItems.add(new JoJoBean(20, "问卷调查"));
         mShowItems.add(new JoJoBean(21, "手势指纹密码"));
+        mShowItems.add(new JoJoBean(22, "仿ios switchbutton"));
 
         mJoJoAdapter.notifyDataSetChanged();
     }

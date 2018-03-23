@@ -83,6 +83,8 @@
         <activity android:name=".activity.ClosePatternPswActivity"/>
         <activity android:name=".activity.SettingPatternPswActivity"/>
         <activity android:name=".activity.VerifyFingerActivity"/>
+        <!--仿ios switchbutton-->
+        <activity android:name=".activity.SwitchButtonActivity"/>
         <!-- 设备管理 -->
         <receiver
             android:name=".broadcastreceiver.LockReceiver"

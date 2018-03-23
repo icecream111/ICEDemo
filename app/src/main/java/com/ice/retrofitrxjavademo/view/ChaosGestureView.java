@@ -488,7 +488,7 @@ public class ChaosGestureView extends View {
                 canvas.drawBitmap(selectedBitmapSmall, (float) (firstX + bean.getX() * (pieceWidthSmall * 1.25)), (float) (firstY + bean.getY() * (pieceWidthSmall * 1.25)), mPaint);
             }
         }
-        drawMessage(canvas, "绘制解锁图案", mError);
+        drawMessage(canvas, "为了您的账户安全，请设置手势密码", mError);
     }
 
     private void drawMessage(Canvas canvas, String message, boolean errorFlag) {

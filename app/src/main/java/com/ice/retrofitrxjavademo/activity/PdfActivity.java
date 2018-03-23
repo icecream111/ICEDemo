@@ -38,7 +38,9 @@ public class PdfActivity extends BaseActivity implements OnPageChangeListener, O
     PDFView mPdfview;
 
     private OkHttpClient okHttpClient;
-    private String url = "http://www.gaofengzc.com/uploadFile/pdf/b.pdf";
+    private String url = "https://testapi.fadada.com:8443/api//viewdocs.action?app_id=401016&send_app_id=null&v=2.0&timestamp=20180322095729&transaction_id=2017111009531236635201&msg_digest=NDE1N0Y4NkVGNDhCQzAzRkE0OUY3NDlFQ0ZENUJEMjVBRjAzRUI0NQ==";
+
+//    private String url = "http://www.gaofengzc.com/uploadFile/pdf/b.pdf";
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
