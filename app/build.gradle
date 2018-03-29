@@ -71,7 +71,7 @@ android {
             annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
             // 智能刷新控件
-            compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+            compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
 
             //强大的工具类 几乎涵盖了常用的所有工具类
             compile 'com.blankj:utilcode:1.11.0'

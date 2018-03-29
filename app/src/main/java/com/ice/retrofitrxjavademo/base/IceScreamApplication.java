@@ -50,18 +50,24 @@ public class IceScreamApplication extends MultiDexApplication {
      * 设置全局的上拉加载下拉刷新样式
      */
     private void initRefreshHeader() {
+
         //设置全局的Header构建器
         SmartRefreshLayout.setDefaultRefreshHeaderCreater(new DefaultRefreshHeaderCreater() {
             @Override
             public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
-                return new ClassicsHeader(context);//指定为经典Header，默认是 贝塞尔雷达Header
+                ClassicsHeader classicsHeader = new ClassicsHeader(context);
+                //   int deta = new Random().nextInt(7 * 24 * 60 * 60 * 1000);
+                //   classicsHeader.setLastUpdateTime(new Date(System.currentTimeMillis() - deta));
+                //   classicsHeader.setTimeFormat(new SimpleDateFormat("更新于 MM-dd HH:mm", Locale.CHINA));
+                //   classicsHeader.setTimeFormat(new DynamicTimeFormat("更新于 %s"));
+                return classicsHeader;//指定为经典Header
             }
         });
         //设置全局的Footer构建器
         SmartRefreshLayout.setDefaultRefreshFooterCreater(new DefaultRefreshFooterCreater() {
             @Override
             public RefreshFooter createRefreshFooter(Context context, RefreshLayout layout) {
-                return new ClassicsFooter(context);//指定为经典Footer，默认是 BallPulseFooter
+                return new ClassicsFooter(context);//指定为经典Footer
             }
         });
     }

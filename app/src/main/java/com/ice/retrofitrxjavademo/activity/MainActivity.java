@@ -140,6 +140,9 @@ public class MainActivity extends BaseActivity {
                     case 22://switchButton
                         ARouter.getInstance().build("/ice/activity/SwitchButtonActivity").navigation();
                         break;
+                    case 23://refresh
+                        ARouter.getInstance().build("/ice/activity/RefreshActivity").navigation();
+                        break;
                 }
             }
         });
@@ -170,6 +173,7 @@ public class MainActivity extends BaseActivity {
         mShowItems.add(new JoJoBean(20, "问卷调查"));
         mShowItems.add(new JoJoBean(21, "手势指纹密码"));
         mShowItems.add(new JoJoBean(22, "仿ios switchbutton"));
+        mShowItems.add(new JoJoBean(23, "刷新加载"));
 
         mJoJoAdapter.notifyDataSetChanged();
     }

@@ -87,6 +87,8 @@
         <activity android:name=".activity.SwitchButtonActivity"/>
         <activity android:name=".activity.CreateGestureActivity"/>
         <activity android:name=".activity.GestureLoginActivity"/>
+        <!--刷新加载-->
+        <activity android:name=".activity.RefreshActivity"/>
         <!-- 设备管理 -->
         <receiver
             android:name=".broadcastreceiver.LockReceiver"
