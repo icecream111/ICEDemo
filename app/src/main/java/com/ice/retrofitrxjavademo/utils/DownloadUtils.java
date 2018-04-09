@@ -13,15 +13,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 /**
  * Created by ICE on 2018/1/19.
@@ -57,7 +57,7 @@ public class DownloadUtils {
         retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .client(httpClient)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
 
@@ -68,34 +68,53 @@ public class DownloadUtils {
      * @param filePath
      * @param subscriber
      */
-    public void download(@NonNull String url, final String filePath, Subscriber subscriber) {
+    public void download(@NonNull String url, final String filePath, Observer subscriber) {
 
         listener.onStartDownLoad();
 
         // subscribeOn()改变调用它之前代码的线程
         // observeOn()改变调用它之后代码的线程
+        //        Networks.getInstance().getApiService()
+        //                .download(url)
+        //                .subscribeOn(Schedulers.io())
+        //                .unsubscribeOn(Schedulers.io())
+        //                .map(new Func1<ResponseBody, InputStream>() {
+        //
+        //                    @Override
+        //                    public InputStream call(ResponseBody responseBody) {
+        //                        return responseBody.byteStream();
+        //                    }
+        //                })
+        //                .observeOn(Schedulers.computation()) // 用于计算任务
+        //                .doOnNext(new Action1<InputStream>() {
+        //                    @Override
+        //                    public void call(InputStream inputStream) {
+        //
+        //                        writeFile(inputStream, filePath);
+        //
+        //                    }
+        //                })
+        //                .observeOn(AndroidSchedulers.mainThread())
+        //                .subscribe(subscriber);
         Networks.getInstance().getApiService()
                 .download(url)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
-                .map(new Func1<ResponseBody, InputStream>() {
-
+                .map(new Function<ResponseBody, InputStream>() {
                     @Override
-                    public InputStream call(ResponseBody responseBody) {
+                    public InputStream apply(ResponseBody responseBody) throws Exception {
                         return responseBody.byteStream();
                     }
                 })
-                .observeOn(Schedulers.computation()) // 用于计算任务
-                .doOnNext(new Action1<InputStream>() {
+                .observeOn(Schedulers.computation())
+                .doOnNext(new Consumer<InputStream>() {
                     @Override
-                    public void call(InputStream inputStream) {
-
+                    public void accept(InputStream inputStream) throws Exception {
                         writeFile(inputStream, filePath);
-
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(subscriber);
+               .subscribe(subscriber);
     }
 
     /**
